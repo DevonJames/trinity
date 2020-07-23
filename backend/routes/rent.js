@@ -234,6 +234,7 @@ const processData = async (req, res) => {
         }
         return user.save()
     }
+    emitter.removeAllListeners('rented')
     emitter.once('rented', _rent)
     // emitter.removeListener('rented', _rent)
 }

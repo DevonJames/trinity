@@ -479,7 +479,7 @@ if(priceBtcUsd === 0 || !priceBtcUsd){
                     let transactions = res.transactions
 
                     if(balance >= (MIN_TRADE_SIZE * 2) && (context.hour > 1)){
-                        pushTokensToBittrex()
+                       await pushTokensToBittrex()
                     }
 
 

@@ -223,7 +223,7 @@ class AutoRentCalculatons {
         if (token === 'FLO') {
             let MinPercentFromNHMinLimitScrypt =
                 Math.floor((
-                    0.01 / (Networkhashrate + 0.1)
+                    0.01 / (Networkhashrate + 0.01)
                 ) * 1e8) / 1e8;
             return MinPercentFromNHMinLimitScrypt
         }

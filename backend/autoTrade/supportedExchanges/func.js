@@ -141,9 +141,9 @@ const getFees = async (BLOCK_EXPLORER, transactions) => {
     return Number(total.toFixed(8))
 }
 
-const checkMarketPrice = async (offerPrice) => {
+const checkMarketPrice = async (offerPrice, token) => {
     try {
-        const res = await axios.get('https://api.bittrex.com/api/v1.1/public/getticker?market=BTC-FLO')
+        const res = await axios.get('https://api.bittrex.com/api/v1.1/public/getticker?market=BTC-${token}')
         let marketPrice = res.data.result.Bid
 
         console.log(timestamp(),'checking market price', {offerPrice, marketPrice}, 'offerPrice < marketPrice:', (offerPrice < marketPrice))
